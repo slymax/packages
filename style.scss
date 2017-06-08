@@ -1,0 +1,46 @@
+[v-cloak] {
+  display: none;
+}
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+input {
+  padding: 5px;
+  font-size: 1.5em;
+  font-family: monospace;
+  box-sizing: content-box;
+  width: calc(100% - 42px);
+  margin: 10px 15px;
+  border: 0;
+  &::-webkit-input-placeholder {
+    color: #e6e6e6;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+.header {
+  background-color: #d24a4f;
+  margin: 0;
+}
+.theme {
+  font-family: monospace;
+  background-color: #d24a4f;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 0 5px;
+  float: right;
+}
+.results {
+  margin: 15px;
+  padding: 10px;
+  border: 1px solid #e6e6e6;
+  background-color: #fbfbfb;
+  line-height: 1.5em;
+  a {
+    color: #000;
+    display: block;
+    text-decoration: none;
+  }
+}

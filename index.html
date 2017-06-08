@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Hyper Packages</title>
+</head>
+<body>
+  <div id="app" v-cloak>
+    <div class="header">
+     <input type="text" placeholder="Search">
+   </div>
+   <div class="results" v-for="result in results">
+     <a :href="result.package.links.repository">
+       <strong>{{result.package.name}}</strong>
+       <span>{{result.package.version}}</span> by 
+       <em>{{result.package.publisher.username}}</em>
+       <span class="theme" v-if="result.package.description.indexOf('theme')>-1">Theme</span>
+       <div>{{result.package.description}}</div>
+      </a>
+   </div>
+  </div>
+  <script src="//cdn.jsdelivr.net/g/jquery@3.2.1,vue@2.3.2"></script>
+  <script src="script.js"></script>
+</body>
+</html>
