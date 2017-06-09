@@ -25,11 +25,13 @@ input {
   margin: 0; }
 
 .theme {
-  font-family: monospace;
+  color: #fff;
+  font-size: 0.7em;
+  font-family: sans-serif;
   background-color: #d24a4f;
   text-transform: uppercase;
-  color: #fff;
-  padding: 0 5px;
+  padding: 2px 5px 0;
+  font-weight: bold;
   float: right; }
 
 .results {
