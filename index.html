@@ -10,7 +10,7 @@
 <body>
   <div id="app" v-cloak>
     <div class="header">
-     <input type="text" placeholder="Search">
+     <input type="text" placeholder="Search" v-model="search">
    </div>
    <div class="results" v-for="result in results">
      <a :href="result.package.links.repository">

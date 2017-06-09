@@ -4,15 +4,17 @@
 body {
   margin: 0;
   font-family: sans-serif;
+  text-align: center;
 }
 input {
-  padding: 5px;
-  font-size: 1.5em;
-  font-family: monospace;
+  padding: 10px;
+  max-width: 740px;
+  font-size: 1.25em;
+  font-family: sans-serif;
+  border: 7px solid #b63f3f;
   box-sizing: content-box;
-  width: calc(100% - 42px);
+  width: calc(100% - 60px);
   margin: 10px 15px;
-  border: 0;
   &::-webkit-input-placeholder {
     color: #e6e6e6;
   }
@@ -33,8 +35,11 @@ input {
   float: right;
 }
 .results {
-  margin: 15px;
+  margin: 15px auto;
   padding: 10px;
+  max-width: 750px;
+  width: calc(100% - 60px);
+  text-align: left;
   border: 1px solid #e6e6e6;
   background-color: #fbfbfb;
   line-height: 1.5em;
