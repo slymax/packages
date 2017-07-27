@@ -20,9 +20,42 @@ input {
   input:focus {
     outline: none; }
 
+/*********************************/
+
+.tabs {
+  background-color: #333333;
+  text-align: left;
+  padding: 5px;
+}
+.tabs span {
+  padding: 10px;
+  margin-right: 5px;
+  width: 100px;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+  font-size: 0.8em;
+  border: 3px solid #b63f3f;
+  text-transform: uppercase;
+  background-color: #d24a4f;
+  border-bottom: 0;
+  color: #fff;
+}
+.tabs span:last-child {
+  z-index: 0;
+  border: 0;
+  background-color: #555555;
+  border: 3px solid #444444;
+}
+
 .header {
+  z-index: 1;
+  border-top: 3px solid #b63f3f;
+  position: relative;
   background-color: #d24a4f;
   margin: 0; }
+
+/*********************************/
 
 .theme {
   color: #fff;
