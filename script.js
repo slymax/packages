@@ -1,16 +1,30 @@
 var app = new Vue({
   el: "#app",
   data: {
-    search: "",
-    results: {}
+    find: "",
+    results: {},
+    active: localStorage.getItem("active") || "hyperterm",
+    tabs: [{
+      name: "Hyper",
+      id: "hyperterm"
+    },{
+      name: "Gulp",
+      id: "gulpplugin"
+    }]
+  },
+  methods: {
+    search: function() {
+      $.getJSON("https://api.npms.io/v2/search?q=keywords:" + app.active + "+" + app.find + "&size=100", function(data) {
+        app.results = data.results;
+      });
+    }
   }
 });
-function search() {
-  $.getJSON("https://api.npms.io/v2/search?q=keywords:hyperterm" + "+" + app.search + "&size=100", function(data) {
-    app.results = data.results;
-  });
-}
-$('input').keypress(function(e) {
-  if (e.which == 13) search();
+var timer;
+$(document).keyup(function() {
+  clearTimeout(timer)
+  timer = setTimeout(function() {
+    app.search();
+  }, 500);
 });
-search();
+app.search();

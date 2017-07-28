@@ -3,6 +3,7 @@
 
 body {
   margin: 0;
+  min-height: 101vh;
   font-family: sans-serif;
   text-align: center; }
 
@@ -10,73 +11,48 @@ input {
   padding: 10px;
   max-width: 740px;
   font-size: 1.25em;
-  font-family: sans-serif;
-  border: 7px solid #b63f3f;
   box-sizing: content-box;
-  width: calc(100% - 60px);
+  border: 7px solid #b63f3f;
+  width: calc(100% - 65px);
   margin: 10px 15px; }
   input::-webkit-input-placeholder {
     color: #e6e6e6; }
   input:focus {
     outline: none; }
 
-/*********************************/
-
 .tabs {
-  background-color: #333333;
-  text-align: left;
   padding: 5px;
-}
-.tabs span {
-  padding: 10px;
-  margin-right: 5px;
-  width: 100px;
-  font-weight: bold;
-  position: relative;
-  z-index: 2;
-  font-size: 0.8em;
-  border: 3px solid #b63f3f;
-  text-transform: uppercase;
-  background-color: #d24a4f;
-  border-bottom: 0;
-  color: #fff;
-}
-.tabs span:last-child {
-  z-index: 0;
-  border: 0;
-  background-color: #555555;
-  border: 3px solid #444444;
-}
+  text-align: left;
+  background-color: #333333; }
+  .tabs span {
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 0.8em;
+    margin-right: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #d24a4f;
+    background-color: #555555; }
+    .tabs span.active {
+      background-color: #d24a4f; }
 
 .header {
   z-index: 1;
-  border-top: 3px solid #b63f3f;
   position: relative;
   background-color: #d24a4f;
   margin: 0; }
 
-/*********************************/
-
-.theme {
-  color: #fff;
-  font-size: 0.7em;
-  font-family: sans-serif;
-  background-color: #d24a4f;
-  text-transform: uppercase;
-  padding: 2px 5px 0;
-  font-weight: bold;
-  float: right; }
-
-.results {
-  margin: 15px auto;
+.result {
   padding: 10px;
   max-width: 750px;
   width: calc(100% - 60px);
-  text-align: left;
   border: 1px solid #e6e6e6;
   background-color: #fbfbfb;
-  line-height: 1.5em; }
-  .results a {
-    color: #000;
+  line-height: 1.5em;
+  margin: 15px auto;
+  text-align: left; }
+  .result a {
+    color: #333333;
     display: block;
     text-decoration: none; }

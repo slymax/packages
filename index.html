@@ -10,17 +10,16 @@
 <body>
   <div id="app" v-cloak>
     <div class="tabs">
-      <span>Hyper</span><span>Gulp</span>
+      <span v-for="tab in tabs" :class="{active:active==tab.id}" @click="active=tab.id;search();localStorage.setItem('active',tab.id)">{{tab.name}}</span>
     </div>
     <div class="header">
-     <input type="text" placeholder="Search" v-model="search">
+     <input type="text" placeholder="Search" v-model="find">
    </div>
-   <div class="results" v-for="result in results">
-     <a :href="result.package.links.repository">
+   <div class="result" v-for="result in results">
+     <a :href="result.package.links.repository" target="_blank">
        <strong>{{result.package.name}}</strong>
-       <span>{{result.package.version}}</span> by 
+       <span>{{result.package.version}}</span> by
        <em>{{result.package.publisher.username}}</em>
-       <span class="theme" v-if="result.package.description.indexOf('theme')>-1">Theme</span>
        <div>{{result.package.description}}</div>
       </a>
    </div>
