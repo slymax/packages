@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Packages</title>
+</head>
+<body>
+  <div id="app" v-cloak>
+    <div class="tabs">
+      <div>
+        <span v-for="tab in tabs" :class="{active:active==tab.id}" @click="active=tab.id;search();localStorage.setItem('active',tab.id)">{{tab.name}}</span>
+      </div>
+    </div>
+    <div class="header">
+     <input type="text" placeholder="Search" v-model="find">
+   </div>
+   <div class="result" v-for="result in results">
+     <a :href="result.package.links.repository" target="_blank">
+       <strong>{{result.package.name}}</strong>
+       <span>{{result.package.version}}</span> by
+       <em>{{result.package.publisher.username}}</em>
+       <div>{{result.package.description}}</div>
+      </a>
+   </div>
+  </div>
+  <script src="//cdn.jsdelivr.net/g/jquery@3.2.1,vue@2.3.2"></script>
+  <script src="script.js"></script>
+</body>
+</html>
